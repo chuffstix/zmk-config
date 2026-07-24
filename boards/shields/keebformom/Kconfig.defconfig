@@ -1,1 +1,7 @@
+if SHIELD_KEEBFORMOM
+
+config ZMK_KEYBOARD_NAME
+    default "KeebForMom Macropad"
+
+endif
 
