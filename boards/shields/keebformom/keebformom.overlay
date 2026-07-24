@@ -1,1 +1,31 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        
+        // KFM natively uses Row-to-Column diode orientation
+        diode-direction = "row2col"; 
+
+        // Pro Micro Raw Pins: F4, F5, F6, F7 
+        row-gpios
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH> 
+            ;
+
+        // Pro Micro Raw Pins: B1, B3, B2, B6, B5
+        col-gpios
+            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            ;
+    };
+};
 
