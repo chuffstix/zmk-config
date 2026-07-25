@@ -6,7 +6,7 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "col2row"; // Check PCB diode direction (usually col2row)
+        diode-direction = "row2col"; // Check PCB diode direction (usually col2row)
 
         col-gpios
             = <&pro_micro 14 GPIO_ACTIVE_HIGH>
