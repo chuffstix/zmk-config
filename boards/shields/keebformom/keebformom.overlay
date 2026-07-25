@@ -10,24 +10,21 @@
         // KFM natively wires diodes pointing from Row to Column
         diode-direction = "row2col"; 
 
-        // Actual KFM Row Pins: F4, F5, F6, F7 
-        // Adjusted for COL2ROW matrix scanning
+        // Rows are OUTPUTS in row2col. No pull-down needed.
         row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH> 
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH> 
             ;
-        // Actual KFM Col Pins: B1, B3, B2, B6, B5
+            
+        // Columns are INPUTS in row2col. They need the pull-downs.
         col-gpios
-            = <&pro_micro 15 GPIO_ACTIVE_HIGH> 
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH> 
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH> 
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH> 
-            , <&pro_micro 9  GPIO_ACTIVE_HIGH> 
+            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
-
-        
     };
 };
-
