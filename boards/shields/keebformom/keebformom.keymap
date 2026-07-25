@@ -8,21 +8,20 @@
 
         default_layer {
             bindings = <
-                &kp N7 &kp N8 &kp N9    &kp KP_DIVIDE   &kp BSPC
-                &kp N4 &kp N5 &kp N6    &kp KP_MULTIPLY &kp UP
-                &kp N1 &kp N2 &kp N3    &kp KP_MINUS    &kp DOWN
-                &kp N0 &kp DOT &kp ENTER &kp KP_PLUS     &mo 1
+                &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp BSPC   &bt BT_CLR
+                &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp TAB    &bt BT_NXT
+                &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp RET    &mo 1
+                &kp NUM_0  &kp DOT    &kp PLUS   &kp MINUS  &kp ASTERISK
             >;
         };
 
-        bt_layer {
+        fn_layer {
             bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &none
-                &none        &none        &none        &none      &none
-                &none        &none        &none        &none      &none
-                &none        &none        &none        &none      &trans
+                &bootloader  &none  &none  &none  &none
+                &none        &none  &none  &none  &none
+                &none        &none  &none  &none  &trans
+                &none        &none  &none  &none  &none
             >;
         };
     };
 };
-
